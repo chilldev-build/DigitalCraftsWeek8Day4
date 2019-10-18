@@ -20,7 +20,7 @@ CREATE TABLE employee (
 
 CREATE TABLE time_punch (
     id SERIAL PRIMARY KEY,
-    eeid INT NOT NULL REFERENCES employee(id) on DELETE CASCADE,
+    eeid VARCHAR(4) NOT NULL REFERENCES employee(eid),
     starttime timestamp without time zone NOT NULL,
     endtime timestamp without time zone NOT NULL
      
@@ -54,5 +54,5 @@ INSERT INTO employee (eid, co_cid, firstname, lastname) VALUES
 
 
 INSERT INTO time_punch (eeid, starttime, endtime) VALUES
-(1, '2012-07-01 10:00:00', '2012-07-01 14:05:30');
+('1001', '2012-07-01 10:00:00', '2012-07-01 14:05:30');
 
